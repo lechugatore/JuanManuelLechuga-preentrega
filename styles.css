@@ -1,0 +1,581 @@
+/* ============================================================
+   ESTILOS GENERALES
+   ============================================================ */
+
+/* Tomo de Google Fonts fuente Montserrat */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* Reset general: elimina márgenes y paddings por defecto del navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Tipografía base */
+h1 {
+    font-size: 500px;
+    line-height: 64px;
+    color: #222;
+}
+
+h2 {
+    font-size: 46px;
+    line-height: 54px;
+    color: #222;
+}
+
+h4 {
+    font-size: 20px;
+    color: #222;
+}
+
+h6 {
+    font-weight: 700;
+    font-size: 12px;
+}
+
+p {
+    font-size: 16px;
+    color: #171c1a;
+    margin: 15px 0 20px 0;
+}
+
+body {
+    width: 100%;
+}
+
+/* Clases utilitarias de espaciado reutilizadas en varias secciones */
+.section-p1 {
+    padding: 40px 80px;
+}
+
+.section-m1 {
+    margin: 40px 0;
+}
+
+
+/* ============================================================
+   Header / Menu Principal
+   ============================================================ */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 50px;
+    background-color: #506be6;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    /* Menu principal fijo en la parte superior */
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+/* Menu flex */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar li {
+    list-style: none;
+    padding: 0 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fbf9f9;
+    transition: 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #414242;
+}
+
+/* Botón hamburguesa unicamente visible en mobile */
+.mobile {
+    display: none;
+    align-items: center;
+}
+
+/* Botón cerrar menú mobile */
+.close {
+    display: none;
+}
+
+/* x toast */
+
+
+/* x Modal */
+
+
+/* Responsive: menú deslizable mobile */
+@media (max-width: 799px) {
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        height: 100vh;
+        width: 150px;
+        background-color: #6079e9;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+        padding: 80px 0 0 10px;
+        transition: 0.3s;
+    }
+
+    .navbar li {
+        margin-bottom: 25px;
+    }
+
+    .mobile {
+        display: flex;
+        align-items: center;
+    }
+
+    .mobile i {
+        color: #f9f7f7;
+        font-size: 16px;
+        padding-left: 20px;
+    }
+
+    /* JS que muestra menú */
+    .active {
+        right: 0px;
+    }
+
+    .close {
+        display: initial;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        color: #222;
+        font-size: 24px;
+    }
+}
+
+
+/* ============================================================
+   Hero / Rockero
+   ============================================================ */
+
+.hero {
+    background-image: url('img/rockero.jpg');
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 150vh;
+    width: 100%;
+    background-size: cover;
+    background-position: top 5% center;
+    padding: 0 80px;
+    margin-bottom: 40px;
+}
+
+.hero .hero-content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    z-index: 1;
+}
+
+.hero .hero-content h4 {
+    color: #d30303;
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.hero .hero-content h2 {
+    color: #0d0d0d;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero .hero-content h1 {
+    color: #d30303;
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.hero .hero-content p {
+    color: #010000;
+    margin-bottom: 20px;
+}
+
+.hero .hero-content button {
+    background-color: #e98131;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hero .hero-content button:hover {
+    background-color: #003737;
+}
+
+/* Responsive Hero / Rockero */
+@media (max-width: 1200px) {
+    .hero {
+        padding: 0 60px;
+    }
+
+    .hero .hero-content {
+        width: 55%;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero {
+        height: 85vh;
+        padding: 0 60px;
+    }
+
+    .hero .hero-content {
+        width: 60%;
+    }
+
+    .hero .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero .hero-content h2 {
+        font-size: 2.2rem;
+    }
+
+    .hero .hero-content p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 70vh;
+        padding: 0 40px;
+        justify-content: center;
+        background-position: top center;
+    }
+
+    .hero .hero-content {
+        width: 80%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero .hero-content h4 {
+        font-size: 0.9rem;
+    }
+
+    .hero .hero-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero .hero-content h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        height: 60vh;
+        padding: 0 20px;
+        background-position: 55% center;
+    }
+
+    .hero .hero-content {
+        width: 100%;
+    }
+
+    .hero .hero-content h4 {
+        font-size: 0.8rem;
+    }
+
+    .hero .hero-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero .hero-content h1 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    .hero .hero-content p {
+        font-size: 0.8rem;
+        margin-bottom: 15px;
+    }
+
+    .hero .hero-content button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+
+/* ============================================================
+   x Seccion Tienda - Usa Flexbox para distribuir los productos
+   ============================================================ */
+
+
+/* ============================================================
+   Seccion Banner
+   ============================================================*/
+.banner {
+    width: 100%;
+    height: 40vh;
+    background-image: url(img/banner/bannerropa.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.banner h4 {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.banner h2 {
+    color: #fff;
+    font-size: 30px;
+    padding: 10px 0;
+}
+
+.banner span {
+    color: #ef3636;
+}
+
+.banner button {
+    background-color: #e98131;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.banner button:hover {
+    background: #003737;
+    color: #fff;
+}
+
+/* Responsive Banner */
+@media (max-width: 1200px) {
+    .banner {
+        padding: 0 60px;
+    }
+
+    .banner h2 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 992px) {
+    .banner {
+        height: 35vh;
+    }
+
+    .banner h2 {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner {
+        height: 30vh;
+        padding: 0 20px;
+    }
+
+    .banner h4 {
+        font-size: 14px;
+    }
+
+    .banner h2 {
+        font-size: 22px;
+    }
+
+    .banner button {
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .banner {
+        height: 25vh;
+    }
+
+    .banner h4 {
+        font-size: 12px;
+    }
+
+    .banner h2 {
+        font-size: 18px;
+    }
+
+    .banner button {
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+}
+
+
+/* ============================================================
+   x Newsletter
+   ============================================================ */
+
+
+/* x Formulario */
+
+
+/* x Responsive Newsletter */
+
+
+/* ============================================================
+   Footer
+   ============================================================ */
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer .col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+footer h4 {
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+footer p {
+    font-size: 13px;
+    margin: 0 0 8px 0;
+}
+
+footer a {
+    font-size: 13px;
+    text-decoration: none;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+footer .follow {
+    margin-top: 20px;
+}
+
+footer .follow i {
+    color: #5b4646;
+    padding-right: 4px;
+    cursor: pointer;
+}
+
+/* Imágenes App Store y Google Play */
+footer .install .row img {
+    margin: 5px 0 15px 0;
+    border: 1px solid #088178;
+    border-radius: 6px;
+}
+
+footer .follow i:hover,
+footer a:hover {
+    color: #088178;
+}
+
+footer .copyright {
+    width: 100%;
+    text-align: center;
+}
+
+/* Responsive Footer */
+@media (max-width: 1200px) {
+    footer {
+        padding: 40px 60px;
+    }
+
+    footer .col {
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    footer {
+        padding: 40px 20px;
+    }
+
+    footer .col {
+        width: 45%;
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    footer .col {
+        width: 48%;
+    }
+
+    footer .copyright {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    footer {
+        flex-direction: column;
+    }
+
+    footer .col {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    footer .copyright {
+        margin-top: 10px;
+        font-size: 13px;
+    }
+}
+
+
+/* ============================================================
+   x Seccion ReseñasSECCIÓN RESEÑAS
+   ============================================================ */
+
+
+/* x Grid de 3 columnas para las cards */
+
+
+/* x Card individual de reseña */
+
+
+/* x Estrellas de calificación */
+
+
+/* x Datos del autor de la reseña */
+
+
+/* x Responsive Reseñas */
